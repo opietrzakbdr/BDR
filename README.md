@@ -58,8 +58,11 @@ Uruchomienie ostatniego raportu:
 npx playwright show-report
 ```
 
-<!-- GIT
+GIT:
 
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-  git push origin main -->
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git push origin main
+```
+
