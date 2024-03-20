@@ -11,5 +11,5 @@ test('men shoes', async ({ page }) => {
   await page.goto('https://demo.evershop.io/');
   await page.getByRole('link', { name: 'Men', exact: true }).click();
   await page.locator('a').filter({ hasText: 'Seasonal color chuck' }).click();
-  await page.getByRole('heading', { name: 'Seasonal color chuck' }).click();
+  await expect(page.getByRole('heading', { name: 'Seasonal color chuck' })).toContainText('Seasonal color chuck 70');
 });
