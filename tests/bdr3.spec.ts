@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
 async function goToEvershop(page: Page) {
   await page.goto('https://demo.evershop.io/');
