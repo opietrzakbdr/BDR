@@ -15,6 +15,12 @@ async function goToShoesDetails(page: Page, shoeName: string) {
   await expect(page.getByRole('heading', { name: shoeName })).toBeVisible();
 }
 
+async function addToCart(page: Page, variantName: string, colourName: string ) {
+  await page.getByRole('link', { name: variantName, exact: true }).click();
+  await page.getByRole('link', { name: colourName }).click();
+  await page.getByRole('button', { name: 'ADD TO CART' }).click();
+}
+
 test('testWomen', async ({ page }) => {
   await goToEvershop(page)
   await goToMenu(page, 'Shop women', 'Women' )
@@ -36,4 +42,12 @@ test('testMen', async ({ page }) => {
   await page.getByRole('link', { name: 'S', exact: true }).click();
   await page.getByRole('link', { name: 'Brown' }).click();
   await page.getByRole('button', { name: 'ADD TO CART' }).click();
+});
+
+
+test('testKids', async ({ page }) => {
+  await goToEvershop(page)
+  await goToMenu(page, 'Shop kids', 'Kid' )
+  await goToShoesDetails(page, 'Nmd_r1 shoes'  )
+  await addToCart(page, 'X', 'Black')
 });
